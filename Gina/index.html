@@ -1,0 +1,1669 @@
+Please Bare With Me This Entire Thing Was Coded By Hand and I'm not particularly good at coding
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Love Story 💚</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #fff;
+    }
+
+  .letter-section {
+  background-color: #fffef9;
+  padding: 60px 20px;
+  font-family: 'Georgia', serif;
+  border-top: 3px solid #f8bbd0;
+  border-bottom: 3px solid #f8bbd0;
+  text-align: center;
+}
+
+.letter-section h2 {
+  font-family: 'Courier New', monospace;
+  font-size: 30px;
+  color: #d81b60;
+  margin-bottom: 30px;
+}
+
+.letter-body {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 2;
+  font-size: 20px;
+  color: #333;
+  white-space: pre-wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.letter-body.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .preloader-content img {
+      width: 60vw;
+      max-width: 300px;
+      height: auto;
+      animation: spin 20s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .navbar {
+      background: linear-gradient(to right, #6fdc8c, #33a852);
+      padding: 10px 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      width: 100%;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+
+    .order-btn, .music-btn {
+      margin: 5px;
+      background: linear-gradient(to right, #ff6a6a, #ffc107);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .music-btn {
+      background-color: transparent;
+      border: 2px solid white;
+      padding: 6px 12px;
+    }
+
+    .music-btn:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    .intro {
+      padding: 30px 20px;
+      text-align: center;
+      background: #fff7f0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .intro h1 {
+      font-size: 24px;
+      color: #e91e63;
+    }
+
+    .content {
+      padding: 30px 15px;
+      text-align: center;
+      background-color: #e8f5e9;
+      border-bottom: 2px solid #c8e6c9;
+    }
+
+    .content:nth-of-type(even) {
+      background-color: #d0f0c0;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 100%;
+      margin: 0 auto 20px;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .carousel-slide {
+      display: none;
+      width: 100%;
+    }
+
+    .carousel-slide.active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .carousel-slide img {
+  width: 100%;
+  height: 300px; /* or whatever height you prefer */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.december-special {
+  background-color: #e3f2fd;
+  border-bottom: 2px solid #90caf9;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/b1aad55d-a680-4447-a61c-07e5b8dfbadc/first+year.png?format=500w" alt="Loading" />
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/f537be9d-6c06-4264-a136-70fcf87c1439/image0.jpg?format=1500w" alt="Logo" />
+    </div>
+    <nav>
+      <a href="#month1">Uno</a>
+      <a href="#month2">Dos</a>
+      <a href="#month3">Tres</a>
+      <a href="#month4">Cuatro</a>
+      <a href="#month5">Cinco</a>
+      <a href="#month6">Seis</a>
+      <a href="#month7">Siete</a>
+      <a href="#month8">Ocho</a>
+      <a href="#month9">Nueve</a>
+      <a href="#month10">Diez</a>
+      <a href="#month11">Once</a>
+      <a href="#month12">Doce</a>
+    </nav>
+    <div>
+      <a class="order-btn" href="#bottom">Skip</a>
+      <a href="https://open.spotify.com/album/0C4YWH1f1zcPhIhNIB6S82" target="_blank" class="music-btn">🎵 Play Music</a>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="intro">
+    <h1>HIIII BABYYYYYY HAPPY ANNIVERSARY</h1>
+    <p>
+      You'll eventually be led to a full letter, but this is a brief quick recap:  
+      I'm guessing by now you've scanned the QR code on the purple flower — hopefully everything went smoothly.  
+      Holyyyy I had to learn so much to set this up but gotdamn am I happy; and I hope you are too. I love you so much.  
+      Right now you're very much mad and frustrated at me still about the Ishaan thing, I'm very sad tbh that you aren't texting me,  
+      but in the meantime I made this!!!!!
+      <br><br>
+      Basically, in case you can't tell — I made you a website 💻  
+      You can scroll around. It accounts for our 1–12 months together, highlighting moments and stuff around it.
+      <br><br>
+      Hopefully you liked the sunflowers 🌻 — I know you love those.  
+      You're so precious and I freaking love you.  
+      <br><br>
+      BYEEEEE FOR NOWWWW I LOVE YOU!!!
+    </p>
+  </section>
+
+  <!-- Month 1 -->
+  <section id="month1" class="content">
+    <h2>Month 1</h2>
+    <p>
+      Month one was the best, I just figured out who the most beautiful girl on the planet was (duh you) and I legit turned into the happiest guy on earth;  
+      I don't think I've ever shown someone off so much on social media — you were just a blessing to be with.  
+      No fights really yet, just happy happy happy. I asked you to be my girlfriend this month and guess whatchu said.... YESSSSSSSSSSSSS.  
+      I love you so much.  
+      We went out to play soccer, random walks throughout Central Park; you showed me that random diner that you and your dad went to,  
+      and we tried out Manhattan's most expensive arcade — which we still have yet to win the prize for.
+    </p>
+    <div class="carousel-container">
+      <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/efd56587-d2f5-4be7-9cf7-c2944d5c61e0/IMG_8851.JPEG?format=500w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/b0a2b311-7d08-4e8f-966b-59acc2dd4939/IMG_9217.JPEG?format=500w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/1f64944e-79a2-43ba-aa6c-cc05b4906576/IMG_9175.JPEG?format=500w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/da701a2d-9598-4b62-adb1-0a635f8dbdb1/IMG_9321.JPEG?format=500w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/60684aba-55b6-4f9a-8f4a-85023209b28e/IMG_9465.JPEG?format=500w"></div>
+    </div>
+  </section>
+
+  <!-- Month 2 -->
+  <section id="month2" class="content">
+    <h2>Month 2</h2>
+    <p>
+    June consisted of me being dragged away into Ocean City and not letting me see my beautiful girlfriend; imagine that — two months in and you're captured away and not able to see your everything. That's baddddd bro.  
+    I guess I ate a lot of sushi though because I came back like 30 pounds heavier. Nevertheless, you still loved me so so so much.  
+    THIS WAS ALSO WHEN SATS WERE BECOMING IMPORTANT OH LORDDDD. At least we struggled together.  
+    <br><br>
+    We also went to Mercer Labsssssss — look at us being original, because shortly after everyoneeeeee copied us.  
+    Then for a moment there I got nervous. Soccer was starting and we started becoming distant.  
+    I was focusing on my parents’ business and you were focusing on soccer practices. Gotta admit I was very scared.  
+    <br><br>
+    But this was also a very memorable month because it's when I started introducing you to all of my friends.  
+    We went out with them a few times — you met Christian, Ishaan, Angel — all of my closer friends,  
+    and we went to ball out on the soccer field ayyeeee.  
+    <br><br>
+    We started to stay up unhealthily — calling late, texting late, everything — just so I could have your presence a little longer.  
+    But badabing badaboom I was back in NYC again and there was my beautiful girlfriend standing right in front of me.
+    <br><br>
+    I also finally got my stupid Humane AI pin that I was so excited about. It's actually sitting right in front of me rn (not working lmaoaoaoa).  
+    <br><br>
+    BUT THEN I FINALLY SAW YOU AT THE STEP PROGRAM YESSSSS — and this was when my Columbia program was starting too.  
+    THERE WE GO. I CAN FINALLY SEE MY GF.
+  </p>
+
+    <div class="carousel-container">
+      <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/4d78e5c0-3548-4b2e-b3c6-43efa85120c6/month+2.4.JPEG?format=1500w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/71ef8f89-b03b-4578-a311-c9e9dd47ebed/month+2.3.JPEG?format=500w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/f673681d-9af4-4da2-bc1d-8b79ca1d621d/month+2.2.JPEG?format=500w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/a10e283c-b41d-4742-a83f-f27b123ba69f/month+2.1.JPEG?format=300w"></div>
+      <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/d721fedc-eece-40a6-b168-ad6c6a1f4526/month+2.JPEG?format=300w"></div>
+    </div>
+  </section>
+
+
+<section id="month3" class="content">
+  <h2>Month 3 – Your Birthday 🎉</h2>
+  <p>
+    <strong>JULYYYYY DO YOU KNOW WHAT JULY IS? IT’S THE BIRTH MONTH OF MY BABYYYY.</strong>  
+    Happy Early Birthday again my beautiful. You’re really my shooting star and firework everyday.  
+    God, you don’t know how happy I was to see you that day — I wanted to surprise you so bad and hopefully I did.  
+    <br><br>
+    <br><br>
+    <strong>BIRTHDAY PARTY WAS “ehh”... but I saw my girlfriend — and that’s what always matters.</strong>  
+    Then off to Ocean City I went again. Until I was back again — YAY!!!
+    <br><br>
+    Man, did it really suck seeing Christian and Jennah going out everyday while we were so separated.  
+    But I really trusted in our relationship. I felt like I was growing up.  
+    You started teaching me something this month — I still haven’t fully grasped it, but...  
+    <strong>It’s that texting so much doesn’t matter — it’s the attention and love behind it.</strong>  
+    <br><br>
+    **You also saw MESSI this month.** That’s a blessing by itself.
+    <br><br>
+    What I loved most is that even though we were far away, we compromised.  
+    It showed that you really did want me. I loved those face-mails, I loved those facetime calls,  
+    and I loved those good morning and goodnight paragraphs.
+    <br><br>
+    I also picked up your favorite car this month...  
+    <strong>THE TESLA CYBERTRUCKKKKKK 🛻💨</strong>
+    <br><br>
+    And guess what officially started this time?  
+    <strong>🎓 My Columbia Program — it was GO TIME.</strong>  
+    FIRST thing off the bat — <strong>my job is to see my GF.</strong>
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/7ffa13f6-937c-47b6-bf11-028b13c97bf8/month+3.4.JPEG?format=300w" alt="Birthday photo"></div>
+    <!-- Add more general Month 3 photos here later -->
+  </div>
+
+  <p>
+    <br>
+    But then... we got into our <strong>real first big argument 💔</strong>.  
+    Right now I don’t remember what it was over, but we were in a Yard House, and you just completely ignored me.  
+    Oh wait — I remember now. I started checking your phone because I was insecure.  
+    I was so confused how someone so beautiful could love me and not be interested in someone else.  
+    But somehow, you were. I’m so lucky.
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/02661113-26d1-4fe8-8ef5-13fe7619ff1e/month+3.92.JPEG?format=300w" alt="Argument moment"></div>
+  </div>
+
+  <p>
+    <br>
+    COLUMBIA CLASSES WERE <strong>SOOO FUN 🎓</strong>.  
+    ...and then I got an <strong>atrocity of a haircut✂️😅</strong>  
+    You saw the Cybertruck in person for the first time, we hung out in Union Square (and... we also did *that*... in the Cybertruck 😏)  
+    <br><br>
+    <strong>And we went to THE EDGE! I'm all the wayyy up!</strong>  
+    I really am. I’m the luckiest ever to be dating you.
+  </p>
+
+  <p>
+    And then... I was off.  
+    To Rhode Island to visit the big Harvard in Boston.
+  </p>
+
+  <!-- Special Drawing Date Section -->
+  <h3 style="margin-top: 40px;">🎨 Drawing Date Moment</h3>
+  <p>
+    To wrap off the July month, we went on a drawing date — I drew you, and you drew me.  
+    Safe to say... I did amazing 😌✏️  
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/9d37c914-7464-4255-8c47-e8724e68ab72/drawing+date.PNG?format=1500w" alt="Drawing date" />
+    </div>
+  </div>
+</section>
+
+
+<!-- Month 4 -->
+<section id="month4" class="content">
+  <h2>Month 4 – August Honeymoon 💛</h2>
+  <p>
+    August was my favorite month by far. It started off rocky — the first day was National Girlfriend’s Day,  
+    and I (unfortunately) had no idea it even existed 😅. My beautiful girlfriend was furious — and rightfully so.  
+    But I tried to make it up to her with Vietnamese food at Saigon Shack and some sunflowers 🌻 (hope it worked just a little).
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/398b8c75-ff91-4ea7-adf6-68fd884787be/58277AE6-4746-45DE-82CC-475958F3EEF9_1_105_c.jpeg?format=750w" alt="Saigon Shack"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/5c541586-fdcf-458f-9d90-1e971d736de2/241D3DC8-C36D-49EC-8703-544EB3114B47_1_102_o.jpeg?format=750w" alt="Forgot GF Day"></div>
+  </div>
+
+  <p>
+    What really made this month magical was the feeling — it truly felt like the honeymoon stage.  
+    We went to Central Park and rowed one of those boats together 🚣‍♀️ for just $4 — and honestly, we NEED to do that again this year.
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/58d8f56e-9d56-4cec-a79a-1de923869de6/8BBFC463-1FB5-498C-8E61-52DB73017029_1_105_c.jpeg?format=750w" alt="Boat Date"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/595e970d-3169-431c-8783-fa5a50f5e76e/77185122-BCDF-45AA-B7F7-B6F0DA54DE6E_1_102_o.jpeg?format=750w"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/b0e0e7b4-4874-4a78-9ca8-942d6e09bd68/4EDA801F-8AFF-438C-ACD1-C0F78A344733_1_105_c.jpeg?format=750w" alt="Eye Contact Smirk"></div>
+  </div>
+
+  <p>
+    Then... disaster 😭. My baby got snatched away — all the way to Buenos Aires, Argentina ✈️.  
+    I missed you *so much* during that time. We kept up through FaceTime, left little facemails for each other,  
+    and it reminded me just how much I yearned for your presence every second cheering me on; and I hope I was there for you every time as well :)
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/8af536f7-2cc6-4b27-8e05-e07c9e775a1f/Screenshot+2025-05-10+at+11.30.20%E2%80%AFPM.png?format=750w" alt="Leaving for Buenos Aires"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/ff027c5b-1783-4f2e-a599-fd42827e28f6/BC7B2B4C-9417-4FC2-BC32-CEB0A34FA639_1_105_c.jpeg?format=750w" alt="Knees Moment"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/bd767696-a66b-484e-a46c-0b21fe828db3/Screenshot+2025-05-10+at+11.29.41%E2%80%AFPM.png?format=750w" alt="Packing"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/3dd6c5d9-9001-454e-aae3-1a99bea02ed0/E164D51A-CDAB-447D-A25A-98802874DD2C_1_105_c.jpeg?format=750w" alt="Luggage Cutie Pie"></div>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/254abe5e-5c43-49ed-8203-1ef2f9518dec/Screenshot+2025-05-10+at+11.31.01%E2%80%AFPM.png?format=750w"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/c63dc017-150f-47af-b4e5-45970d97bbec/3F83EC70-707A-4DE8-9BCC-EFA41AF80BE9_1_105_c.jpeg?format=750w"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/bd63bc82-10f8-4ba0-9114-9cbc1a5c101e/92BBD9DC-B46B-4616-81D2-7E4F0E184862_1_101_o.jpeg?format=750w" alt="Facemails"></div>
+  </div>
+
+  <p>
+    THEN SHE CAME BACK TO NYC LET’S GOOOO 🥳  
+    I had a (questionably) painted portrait of Lilo ready for her — I *swear* I tried.
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/0d088687-93d5-4c5b-84e4-dd7058594af8/0DE3AE75-E8B9-4FF0-AE98-3CFE34C97131_1_102_o.jpeg?format=750w" alt="Painted Lilo"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/f527c9ee-6196-4ac3-b19e-eb5b86e6b8bf/A0B0EFCE-7F20-4C52-A316-0BA1DB24CFEC_1_105_c.jpeg?format=750w"></div>
+    <div class="carousel-slide"><img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/69ee788b-5caa-4c3a-912c-0655f3dc57c5/17302FE2-B42E-466A-914B-12DD7E8415ED_1_105_c.jpeg?format=750w"></div>
+  </div>
+
+  <p>
+    We explored Chinatown 🏮, caught a movie 🎥, and just fell deeper in love every second.  
+    No fights. Just laughs. I really couldn’t stop falling in love with you this month.  
+    Gina, you're the best thing that’s ever happened to me.
+  </p>
+</section>
+
+
+<section id="month5" class="content">
+  <h2>Month 5 – September Shift 🎓</h2>
+  <p>
+    September, the month of schooooooooool.  
+    But first — my mom crashed out on me that day. Broken iPad, yelling, stress… but you had my back.  
+    I'm not gonna lie, it was embarrassing crying to my girlfriend, but you made me feel safe.  
+    <strong>I love you so much for that, beautiful.</strong>
+  </p>
+
+  <!-- Broken iPad -->
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://github.com/coolspotyt/Gina/blob/main/IMG_6206.JPEG?raw=true" alt="Broken iPad" />
+    </div>
+  </div>
+
+  <p>
+    This was when I started to feel like more than just a boyfriend. I started to mature.  
+    I was becoming your *partner*. You gave me that shirt from your dad’s old company — the one with the camera —  
+    and I wore that thing like it was my armor.   
+  </p>
+
+  <p>
+    You opened up to me more this month. Told me things about your past. Trusted me.  
+    That meant so much — and it made me fall for you even harder.  
+    <br><br>
+    And THEN... I realized the YouTube channel I’d been watching — **Design Syndrome** —  
+    was literally my future brother-in-law. That was insane I swear you gotta be my soulmate or some💀
+  </p>
+
+  <p>
+    School officially started, and I was back in hell. But it felt different this time, Idk what it was but having you by my side this time with school starting felt very easy, very calming, need i say... very demure? *bro you used to spam that word to me every day*  
+    I was in class with Cynthia, and you’d pop in and out — and it made everything better.  
+    You had more patience with me than I had with myself.
+  </p>
+
+  <!-- Graduation photo -->
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_0830.jpeg" alt="Graduation photo" />
+    </div>
+  </div>
+
+  <p>
+    Ishaan tried hosting something — it did *not* go well, but I’m glad we went.  
+    I met Zihann (for the first and last time 😭). By the way I know I take some awful photos of you—  
+    but they’re my *prized possessions* because you’re in them.
+  </p>
+
+  <!-- Ishaan’s failed party photo -->
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6648.JPEG" alt="Ishaan's party" />
+    </div>
+  </div>
+
+  <p>
+    I changed this month.  
+    I went from a 2.5 GPA to a literal **4.0**. I crushed the SAT. I applied to college.  
+    And you? You were there through every stressful second.
+  </p>
+
+  <p>
+    Thursdays became *our* day — matched our schedules. And we made the most of it.  
+    Even looked for Halloween costumes 🎃  
+    <br><br>
+    I studied like never before. You didn’t just support me — <strong>you made me better.</strong>
+  </p>
+
+  <!-- Full Month 5 Photo Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/ED259A82-9D11-4413-827D-4534DC8A4112.jpg" alt="Month 5 Photo 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_0830.jpeg" alt="Month 5 Photo 2" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_1615.JPEG" alt="Month 5 Photo 3" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6206.JPEG" alt="Month 5 Photo 4" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6232.JPEG" alt="Month 5 Photo 5" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6644.JPEG" alt="Month 5 Photo 6" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6648.JPEG" alt="Month 5 Photo 7" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6917.JPEG" alt="Month 5 Photo 8" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6930.JPEG" alt="Month 5 Photo 9" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6931.JPEG" alt="Month 5 Photo 10" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6932.JPEG" alt="Month 5 Photo 11" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_6951.JPEG" alt="Month 5 Photo 12" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_7148.JPEG" alt="Month 5 Photo 13" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_7277.JPEG" alt="Month 5 Photo 14" />
+    </div>
+  </div>
+</section>
+
+
+
+<section id="month6" class="content">
+  <h2>Month 6 – OCTOBER / SIX MONTHS TOGETHERRRRR 🎃🔥❄️</h2>
+
+  <p>
+    October... ooooo Halloween.
+  </p>
+
+  <p>
+    What kicks off October? **BF DAYYYYYY.**  
+    Yoooo, my girlfriend did NOT forget about me at all. She got me some amazing flowers (my dumbass didn’t keep them alive — don’t kill me 😭).  
+    (Your blue flowers are still alive and well though!)  
+    We did random stuff — went to Central Park and just walked around. It was peaceful.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/central%20park%20and%20walk%20around.PNG" alt="Central Park Walk" />
+    </div>
+  </div>
+
+  <p>
+    I also took my SAT for the last time. After all the prep... I finally got a **1490**. Gotrdamn.  
+    This month was so random — I have so many photos of me and my family out in the wild.  
+    Like hello??? I was on a horse for some reason?
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/horse.JPEG" alt="Horse moment" />
+    </div>
+  </div>
+
+  <p>
+    I commented on your sexy ass post so many times that Instagram literally blocked me 💀.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/insta%20blocking%20me.PNG" alt="Instagram blocked me" />
+    </div>
+  </div>
+
+  <p>
+    I ALSO MADE THE GINA FLAGGGGG 🏁.
+  </p>
+
+  <p>
+    Around this time, I started chilling with Haris (even though you didn’t really know him yet).  
+    I found this secret spot in our school church and ate lunch there with him every day.  
+    Probably not the holiest use of a sacred space 😅.
+  </p>
+
+  <p>
+    We also hit up the photo booth in K-Town!!! 📸  
+    That day was straight fire
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/photo%20booth.JPEG" alt="Photo booth in K-Town" />
+    </div>
+  </div>
+
+  <p>
+    And then... the escape room 😏.  
+    You already know what happened after there — naughty naughty kids.  
+    **BUT WE WON THO — LET’S GOOOOO.**
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/escape%20room.JPEG" alt="Escape room" />
+    </div>
+  </div>
+
+  <p>
+    Everything was going so well. Our 6-month anniversary was coming up.  
+    A Halloween party was around the corner. School was going amazing.  
+  </p>
+
+  <p>
+    Then... fire. A literal fucking fire.  
+    Like... where does a fire even come from??
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/fire.JPEG" alt="Fire" />
+    </div>
+  </div>
+
+  <p>
+    I swear my whole life shifted.  
+    I lowkey believe in religion, and I feel like it was karma or something.  
+    We kept going to that spot in the church and messing around.  
+    Ishaan was even smoking in there... it just wasn’t good.  
+    I feel like I sinned **hellaaaaa** bad. And then boom — fire.  
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/tension.JPEG" alt="Church tension" />
+    </div>
+  </div>
+
+  <p>
+    ANYWAY... THAT NIGHT WE WENT TO THE HALLOWEEN PARTY AHHHH 🎉🎃
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/hallloween.JPEG" alt="Halloween 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/halloweeeeeen.JPEG" alt="Halloween 2" />
+    </div>
+  </div>
+
+  <p>
+    My family and I moved into a hotel for a few days.  
+    Then a few days turned into a while.  
+    Because you know what was next? **Bryant Park Winter Village**, Sea Park, Lazy Dog —  
+    this was about to be **OUR year.**
+  </p>
+
+  <p>
+    Basically, we were living in Manhattan now. Look at us — cool as hell.
+  </p>
+
+  <p>
+    And then... **6 MONTHS TOGETHER.**  
+    Six. Freaking. Months. I was so happy.
+  </p>
+
+  <p>
+    We went to Spygames and I gave you that long ass letter.  
+    (You still have it, right???)
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/spy%20games.JPEG" alt="Spygames" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/long%20ass%20letter.JPEG" alt="Letter" />
+    </div>
+  </div>
+
+  <p>
+    Honestly... it felt so relaxing to live in the city.  
+    I finally understood why you love it so much.
+  </p>
+
+  <p>
+    Our 6-month was one of the **longest days we ever spent together** —  
+    and it was a weekend, so we went all out.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/longest%20days%20together.JPEG" alt="Longest day together" />
+    </div>
+  </div>
+
+  <p>
+    But then I had to drop my baby off for STEP again this fall (I didn’t even get in, rip 🥲).
+  </p>
+
+  <p>
+    We took some digicam photos that I still have stuck behind my phone case —  
+    so I can always carry a little glimpse of you with me wherever I go.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/digicam%20photos%20that%20are%20still%20in%20my%20phone.JPEG" alt="Digicam" />
+    </div>
+  </div>
+
+  <p>
+    Tbh, I don’t know what was up with me this month —  
+    I think my hormones were going wild cause **all I wanted to do was get freaky** 😭.
+  </p>
+
+  <p>
+    I was such a sucker for Columbia University.  
+    I wanted to get in so bad it became my whole personality.
+  </p>
+
+  <p>
+    And then my dumbass got another haircut 💇‍♂️.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/hair%20cut.JPEG" alt="Haircut 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/hair%20cut%202.JPEG" alt="Haircut 2" />
+    </div>
+  </div>
+
+  <p>
+    And then... something really special came along.
+  </p>
+
+  <p>
+    You wanted to go ice skating at Bryant Park for the first time.  
+    <br><br>
+    Not knowing just how much **I would fall in love with it.**
+  </p>
+
+  <p>
+    We went on a little double date with Christian and Jennah,  
+    and holy gotdammit I was **so bad** at skating 😭.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/double%20date.JPEG" alt="Double date" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2ble%20date.JPEG" alt="Double date 2" />
+    </div>
+  </div>
+
+  <p>
+    BUT YOU TAUGHT ME HOW TO ICE SKATE — **YOU DIDDDDD.**  
+    My very own ice queen.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/you%20taught%20me%20how%20to%20ice%20skate.png" alt="You taught me to skate" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/ice%20skating.JPEG" alt="Ice skating 2" />
+    </div>
+  </div>
+
+  <p>
+    And officially — **Bryant Park Winter Village** had begun.  
+    <br><br>
+    This was a turning point in my life.  
+    And it set everything in motion.
+  </p>
+
+  <!-- General October carousel at bottom -->
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/oct.JPEG" alt="October General" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/oct%202.PNG" alt="October 2" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/oct%203.JPEG" alt="October 3" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/oct%204.JPEG" alt="October 4" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/oct%205.JPEG" alt="October 5" />
+    </div>
+  </div>
+</section>
+
+
+<section id="halloween" class="content halloween-special">
+  <h2>Halloween Night 🎃👻</h2>
+
+  <p>
+    I forgot to code the part for Halloween, so I’m back here doing it now.  
+    I remember it was on a Thursday — it was a weekday — and I got home soooo late, holyyyy.  
+    Honestly, it was <strong>so fun</strong>, I freaking loved it.
+  </p>
+
+  <p>
+    I loved that haunted house we went to.  
+    I loved my stupid costume that didn’t really work... but kinda did?  
+    And then we had to wait for Christian and Jennah, bro...  
+    THEY’RE ACTUALLY SO SLOW 😭 We’re 100% the better couple.  
+    (Did you know they’re basically back together again?!)
+  </p>
+
+  <p>
+    I’m ngl, you were a <strong>BADDIE</strong> in that costume.  
+    I wanted to smash <strong>so bad</strong> (bro's cooked, he's full of lust in his mind rn).
+  </p>
+
+  <p>
+    <em>SIDE NOTE IN HERE:</em><br>
+    BRO THIS IS SOOO ANNOYING TO CODE 😭😭😭  
+    When I’m downloading photos they’re live photos and I keep having to extract a damn link for them.  
+    AHHHH I LOVE YOU GINA OKAY BACK TO THE MESSAGE.
+  </p>
+
+  <p>
+    Bro people had some funny-ass costumes — like this Trump person??  
+    LMAOAOAO idk why its so funny to me
+  </p>
+
+  <!-- Halloween Carousel (not including Trump dude) -->
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_4310.JPEG" alt="Halloween Costume 1" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_4419.JPEG" alt="Halloween Costume 2" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_9493.JPEG" alt="Haunted House" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_9496%20(1).JPEG" alt="Waiting around" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_9528.JPEG" alt="Halloween Fun" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/christian%20and%20jennah%20taking%20ofrever.JPEG" alt="Christian and Jennah taking forever" /></div>
+  </div>
+
+  <!-- Trump Dude: Separate Highlight -->
+  <h3 style="margin-top: 30px;">🧍‍♂️ Special Mention: The Trump Dude</h3>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/trump%20dude.JPEG" alt="Trump Costume LOL" />
+    </div>
+  </div>
+</section>
+
+
+<section id="month7" class="content">
+  <h2>Month 7 – November 🍂🧠</h2>
+
+  <p>
+    November was lowkey a bummer ngl.  
+    It was NOTHING compared to October.  
+    But I did, however, become a literal <strong>fein for ice skating</strong> — it was insaneeeee.
+  </p>
+
+  <p>
+    Trump also somehow won something that month?? I don’t even know.  
+    Maybe it was the air or something... something was up with November bruh.
+  </p>
+
+  <p>
+    Y’know what was kinda cool though?  
+    We visited <strong>Squid Games</strong> and lowkey I really liked it.  
+    The Christmas spirit was starting to come back a little, not gonna lie.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/squid%20games.png" alt="Squid Games" />
+    </div>
+  </div>
+
+  <p>
+    We even organized a little group hangout where everybody came to Bryant Park and we went ice skatingggg.  
+    That was such a vibe.
+  </p>
+
+  <p>
+    But I’m not gonna lie — I was getting home at like 12am every night.  
+    I hated that. I felt... disconnected.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/so%20busy%20holy.JPEG" alt="So Busy" />
+    </div>
+  </div>
+
+  <p>
+    At least the business was BOOMING. 💸💼
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/BOOMING%20BUSINESS%20HOLY.JPEG" alt="Business Booming" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/business%20was%20booming.JPEG" alt="Business Again" />
+    </div>
+  </div>
+
+  <p>
+    November was honestly kinda ass looking back at it.  
+    Whoever has a birthday in November... sorry bro 💀
+  </p>
+
+  <p>
+    We also saw that <strong>HORRENDOUS</strong> play that Jamil was in —  
+    I’m not even putting the photo in. It was <em>so</em> ass. LMAOAOAO.
+  </p>
+
+  <p>
+    I stayed out a LOT that month.  
+    Then Seapark was set up at Union Square. Then Columbus Circle. Then Herald Square.  
+    Boom boom boom. Money money moneyyy.
+  </p>
+
+  <p>
+    <em>Sorry, just ran into this photo while writing —</em>  
+    <strong>IMMA BITE YOU.</strong>
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/imma%20bite%20you.JPEG" alt="Imma Bite You" />
+    </div>
+  </div>
+
+  <p>
+    I think I was expecting November to be a lot more exciting.  
+    I was working at one of the busiest spots in the world... but it just wasn’t fun.  
+    Gotdamn. It wasn’t it.
+  </p>
+
+  <p>
+    I don’t know what it was, but that month took a hard toll on me mentally.  
+    I didn’t find time for school. I didn’t find time for our relationship.  
+    It was just SeaPark, SeaPark, SeaPark. Grinding and ice skating on repeat.
+  </p>
+
+  <p>
+    And then... I broke my girlfriend’s heart.  
+    I got into the worst argument we’ve ever had.  
+    <strong>She blocked me.</strong> Holy fuck. That day hurt so much.  
+    I’m not gonna lie — I’m getting a little sad just remembering it.  
+    <strong>From the bottom of my heart... I’m so sorry, love.</strong>  
+    I never want to hurt you like that again.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/im%20so%20sorry.PNG" alt="I'm so sorry" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/sad%20day.JPEG" alt="Sad Day" />
+    </div>
+  </div>
+
+  <p>
+    I genuinely thought it was over. I thought I killed our relationship.
+  </p>
+
+  <p>
+    But I guess with time... it healed.  
+    I realized I needed to take control of my life — figure out who I am, where I stand, how I can be better.  
+    It sounds cliché and corny, but holy...
+  </p>
+
+  <p>
+    <strong>WRESTLING TIMEEEEEEE 🤼</strong>
+  </p>
+
+  <p>
+    I was actually mad excited. But with everything else going on... it pushed me over the edge.  
+    I know it sounds weak or dumb, but I was falling apart.  
+    The fact that a 95 on an assignment was tearing me apart says a lot.
+  </p>
+
+  <p>
+    I needed my girl. I needed my cutie pie.
+  </p>
+
+  <p>
+    <strong>GOTDAMN am I happy I didn’t do wrestling.</strong>  
+    That was the best decision of my life.
+  </p>
+
+  <p>
+    I guess we recovered eventually.  
+    I see more smiles from you in the photos again.  
+    I still don’t know why that month felt so stressful... but it did.
+  </p>
+
+  <p>
+    <strong>Nothing cheers me up more than your smile, baby.</strong>
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/beautiful%20smile.JPEG" alt="Beautiful Smile" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/smile.JPEG" alt="Smile" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/more%20msmiles.JPEG" alt="More Smiles" />
+    </div>
+  </div>
+
+  <p>
+    I think genuinely, you were my lifesaver there.  
+    I was in such a low moment again.  
+    But seeing you smile, seeing you laugh, feeling your warmth?  
+    It lifted me up. You made me feel like I could grow again.  
+    From that small baby... into a big man 😊  
+    I love you, darling. I’m so grateful to have you.
+  </p>
+
+  <p>
+    <strong>WE WENT TO FEROXXXXX 💪 (and I beat your ass, hehehe)</strong>  
+    Come beat me up.
+  </p>
+
+  <p>
+    I also hired Bri, Ishaan, Davis, Lala, Christian, and Irene LMAOAOAOAOA.  
+    It was turning into a whole operation at this point.
+  </p>
+
+  <p>
+    And then... Thanksgiving 🦃
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/thanksgiving.JPEG" alt="Thanksgiving" />
+    </div>
+  </div>
+
+  <p>
+    I know this message is a little late, but I just want you to know:  
+    <strong>I'm thankful for you.</strong>  
+    Thank you for saving my life.  
+    Thank you for making me a better person.  
+    Thank you for bringing my smile back with your beautiful smile.  
+  </p>
+
+  <p>
+    We’ve had our ups and downs, and November was definitely a down...  
+    But gotdamn, you made my life light up again.  
+    I love you so, so much.
+  </p>
+
+  <!-- November photo dump carousel -->
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/my%20ice%20princess.JPEG" alt="My Ice Princess" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_0619.JPEG" alt="Business Moment" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_0765.JPEG" alt="Grind Time" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_5515.JPEG" alt="SeaPark Times" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_9778.JPEG" alt="Work Break" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_9822.JPEG" alt="More Business" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_9840.PNG" alt="Break Shot" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/IMG_9880.JPEG" alt="Sitting Around" /></div>
+  </div>
+</section>
+
+
+<section id="month8" class="content december-special">
+  <h2>Month 8 – December ❄️🎂</h2>
+
+  <p>
+    I’m ngl — December started off really unhealthy.  
+    I was pulling all-nighters 4–5 days in a row while my parents slept,  
+    playing Fortnite ‘til 5am, my skin was breaking out...  
+    It was not a good look 💀.
+  </p>
+
+  <p>
+    <strong>BUT!</strong> We took our December SAT together —  
+    and that was SOOOOO cool 🤓📚  
+    Then we had breakfast with your mommaaaa — that was really cute hehe.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/ayyyyy%20sat.JPEG" alt="December SAT" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/ayyy%20viet.JPEG" alt="Breakfast with mom" /></div>
+  </div>
+
+  <p>
+    QUICK JUMP TO DECEMBER 13 — ‘cause I wanna be the main character for a sec 😌  
+    That day was genuinely so much fun.  
+    Even though Christian was 2 hours late (again), I finally got to see everyone.  
+    <strong>AND I WALKED JUG ON MY BIRTHDAY — YIPPEE 🎉</strong>
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/aayy%20birthday.JPEG" alt="Birthday Vibes" /></div>
+  </div>
+
+  <p>
+    Then... I got rejected from Columbia.  
+    Wow. Happy birthday to me 🙃  
+    Then came Fordham. Another rejection. LMAOO  
+    BUT WOOOO — <strong>Scranton came through!!!</strong> Random school, sure...  
+    But $160k scholarship is crazy!
+  </p>
+
+  <p>
+    So there went my birthday 🥲
+  </p>
+
+  <p>
+    Then my cousin got married to some random dude I never met,  
+    and that wedding was lowkey funny 😭
+  </p>
+
+  <p>
+    On December 16th... my dad’s jewelry shop caught fire.  
+    It didn’t burn to the ground, but that day was still stressful as hell.  
+    I swear this month was testing my family in every direction.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/bris%20downfall.PNG" alt="Bri's post — maybe the cause?" /></div>
+  </div>
+
+  <p>
+    Davis and I were ice skating a LOT.  
+    You and I were ice skating even more 🧊  
+    Every day felt like “ice skate, ice skate, ice skate” — and I LOVED IT.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/a%20ice%20skating%20tale.JPEG" alt="Ice Skating Vibes" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/my%20ice%20princess.JPEG" alt="Ice Princess" /></div>
+  </div>
+
+  <p>
+    We also went to TJ Maxx to get gifts for your classmates  
+    and ngl — it made me feel like a grown up.  
+    <strong>I wanna grow older with you ❤️</strong>
+  </p>
+
+  <p>
+    And that’s when I found out you were... <strong>allergic to the cold?</strong>  
+    Weirdo 😭❄️
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/allergic.JPEG" alt="Cold Allergy" /></div>
+  </div>
+
+  <p>
+    But for real, December was pretty jolly 🎄  
+    I saw you almost every day. It snowed. The Christmas vibes hit different.
+  </p>
+
+  <p>
+    We went ice skating at Chelsea Piers! We were out here living it up.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/a%20chelsea%20piers.JPEG" alt="Chelsea Piers Skating" /></div>
+  </div>
+
+  <p>
+    Lowkey this was the <em>chill</em> month.  
+    (See what I did there... chill... snow... no? ok.)
+  </p>
+
+  <p>
+    We visited Rockefeller Center like tourists and I actually really liked it 🏙️
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/ayyy%20rockefellar%20center.JPEG" alt="Rockefeller" /></div>
+  </div>
+
+  <p>
+    <strong>AND I GOT CHRISTMAS PRESENTS!!!</strong>  
+    (I didn’t even know I was supposed to get those tbh — that’s why mine were late btw 😅)  
+    You even saw me on Christmas... and honestly, everything felt perfect.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/ayyyy%20christmas.JPEG" alt="Christmas Together" /></div>
+  </div>
+
+  <p>
+    Until it wasn’t.
+  </p>
+
+  <p>
+    <strong>9:35am — December 27th</strong>  
+    My whole fucking booth lit on fire.  
+    Are you deadass??? What is it with me and fires??
+  </p>
+
+  <p>
+    That day crushed my parents.  
+    I’ve never seen my mom back down like that. That business was her life.  
+    We watched SeaPark rise from nothing... and burn to nothing again.  
+    <strong>That day broke me.</strong>
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/a.JPEG" alt="Burnt Booth 1" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/aa.JPEG" alt="Burnt Booth 2" /></div>
+  </div>
+
+  <p>
+    But you came.  
+    You KNEW I needed you.  
+    And you came and stood by me — stinky breath and all.  
+    I wanted to kiss you so bad even without brushing 💀
+  </p>
+
+  <p>
+    I had never felt so much love until that day.  
+    <strong>You stood by me the whole way.</strong>  
+    You were there — and everyone else too — but you? You mattered most.
+  </p>
+
+  <p>
+    So it passed. But damn... that one scarred me.
+  </p>
+
+  <p>
+    ANYWAYS — PRESENTSSSS 🎁  
+    AYYYYY I’M SO HAPPY I GOT YOU SO MANY PRESENTS HEHEHEHE
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/anyways%20presents.JPEG" alt="Presents!" /></div>
+    <div class="carousel-slide"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/liked%20it.JPEG" alt="She Liked It 🥹" /></div>
+  </div>
+
+  <p>
+    I freaking LOVED your unboxing video.  
+    We also went ice skating at Central Park that day too 😌
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active"><img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/a%20ice%20skating%20tale.JPEG" alt="Central Park Ice Skating" /></div>
+  </div>
+
+  <p>
+    And that’s it — <strong>2024 finally ended.</strong>  
+    And man... I was so happy it did.  
+    Because those fires? They really scarred me.
+  </p>
+</section>
+
+<section id="month9" class="content january-special">
+  <h2>Month 9 – January 🧊🧠</h2>
+
+  <p>
+    January — you introduced me to <strong>Rubik’s Cubes</strong>!!!  
+    Bro I can’t believe I actually figured out how to solve them 😭  
+    And ever since... I’ve been addicted.  
+    (<em>Imma do you next hehehehe</em> 🧩😉)
+  </p>
+
+  <p>
+    We wanted to try new ice skating spots, so we went to <strong>Brooklyn</strong> this time.  
+    Gotdamn — you looked <em>so</em> beautiful that day. Look at you 😭
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/86e3a5fd-9962-496c-b413-6765f5fb22ab/IMG_3338.JPEG?format=750w" alt="Brooklyn Ice Skating" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/5a1936da-a00a-4592-80af-7e4b026e665f/IMG_3420.JPEG?format=750w" alt="Rubik’s Cube Queen" />
+    </div>
+  </div>
+
+  <p>
+    I also had my <strong>Harvard interview</strong> this month 😳🎓  
+  </p>
+
+  <p>
+    Not gonna lie... January was kinda boring   
+    <strong>TikTok got banned</strong> (and then came back like 48 hours later),  
+    
+  </p>
+
+  <p>
+    But hey — we went to the <strong>Xavier vs. Regis game</strong> and I was HYPED we won.  
+    That was a really fun day 🙌
+  </p>
+
+  <p>
+    Honestly, there’s not a lot to show for January —  
+    <strong>except you dyed your hair!!!</strong>  
+    (And YES it looked amazing, don’t even start.)
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/a1f34c42-753e-40b7-a7fc-0165e49ded31/IMG_8010.JPEG?format=500w" alt="Dyed Hair Reveal" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/9c589d5f-b900-4288-9990-fff06d68e555/IMG_3545.JPEG?format=750w" alt="Xavier Game Vibes" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/c9e516b7-0d58-4bba-99c5-c789fb304d03/IMG_4066.JPEG?format=300w" alt="Sidewalk Snapshot" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/3403c043-390b-4c79-b66c-3d04ab29c17c/FullSizeRender.JPEG?format=300w" alt="Random Laughs" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/639bf995-37f8-4a17-b582-a86517840659/IMG_8082.JPEG?format=750w" alt="Smiling in January" />
+    </div>
+  </div>
+</section>
+
+<section id="month10" class="content february-special">
+  <h2>Month 10 – February 💘✈️</h2>
+
+  <p>
+    Phewww — enough of New York. I needed to get outta here.
+    <br><br>
+    Because February means:
+    <br>
+    A) Valentine’s Day  
+    B) Gina Day  
+    C) More Gina Time  
+    D) Wait... <strong>I had to go to London for Fashion Week?!</strong>
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.1.JPEG" alt="February Start" />
+    </div>
+  </div>
+
+  <p>
+    I also started <strong>service</strong> for the first time this month —  
+    which meant no more Mondays at school.  
+    <em>Goddamn, time flies.</em>
+  </p>
+
+  <p>
+    I don’t know what possessed me but gotdamn...  
+    <strong>I got the worst haircut of all time 💀</strong>
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.2%20bad%20haircut.JPEG" alt="Bad Haircut 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.3%20bad%20haircut.JPEG" alt="Bad Haircut 2" />
+    </div>
+  </div>
+
+  <p>
+    It was also super early but I asked my girlfriend to prom already 😭  
+    THEN I asked her to be my Valentine shortly after hehehehehe 🥹💌
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.4%20prom.JPEG" alt="Promposal 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.5%20prom.JPEG" alt="Promposal 2" />
+    </div>
+  </div>
+
+  <p>
+    We celebrated Valentine’s Day early 💖  
+    And holy geez... <strong>I love your smile so much</strong>  
+    It’s actually the most beautiful thing I’ve ever seen.
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.6%20valetnines.JPEG" alt="Early Valentine’s" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.7%20valentines%20day.JPEG" alt="Valentine's Day 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.7%20valentines.JPEG" alt="Valentine's Day 2" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.8%20beautiful%20smile%20again.JPEG" alt="That Beautiful Smile" />
+    </div>
+  </div>
+
+  <p>
+    Then came the pain — <strong>I got rejected from NYU.</strong>  
+    Yay!!! Go Violets!!! 💜🔪
+  </p>
+
+  <p>
+    And off I was — to Europe.
+  </p>
+
+  <p>
+    I’m not even gonna show the Europe trip... that thing was long as hell  
+    and I’m not putting you through all that rn 😭✈️
+  </p>
+
+  <p>
+    AHHH time’s catching up to me...  
+    And BAM — February ends.
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/2.9.JPEG" alt="End of February" />
+    </div>
+  </div>
+</section>
+
+<section id="month11" class="content march-special">
+  <h2>Month 11 – March 🌱🎓</h2>
+
+  <p>
+    1) <strong>Senior Assassin</strong> started — LET’S ELIMINATE EMMA 😤🔫  
+  </p>
+
+  <p>
+    2) We went to <strong>Area 53</strong> in Brooklyn!  
+    I lowkey thought that was so fun ngl
+  </p>
+
+  <p>
+    3) I went off to <strong>Model UN in DC</strong> 🇺🇳  
+    And you met Nirvaan for the first time 😭
+  </p>
+
+  <p>
+    4) I didn’t win shit at Model UN.  
+    (I sold the bag so hard 😭)
+  </p>
+
+  <p>
+    5) I went ice skating with Haris for the first time  
+    and that’s when I started getting close with him.  
+  
+  </p>
+
+  <p>
+    6) WE WENT ON OUR <strong>PICNIC DATE</strong> 🧺  
+    That was such a beautiful day — I’ll never forget it. (amazing picnic stuff)
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/3.2%20picnic.png" alt="Picnic Date" />
+    </div>
+  </div>
+
+  <p>
+    7) I had dinner with my beautiful girlfriend 🍽️💗  
+    Life felt good that night.
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/3.3%20i%20had%20dinner%20with%20my%20beaytufyk%20gf.JPEG" alt="Dinner Date 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/3.4%20dinner%20again.JPEG" alt="Dinner Date 2" />
+    </div>
+  </div>
+
+  <p>
+    8) Senioritis hit me like a truck 💀  
+    But it’s okay because...  
+    <strong>I GOT ACCEPTED INTO PURDUE AYYYY 🐉🔥</strong>
+  </p>
+
+  <p>
+    9) <strong>OCEAN CITY WAS OPENING AGAIN WOOOOOO 🌊</strong>  
+    That means summer was loading... and so was freedom.
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/3.1.JPEG" alt="March Moment" />
+    </div>
+  </div>
+</section>
+
+<section id="month12" class="content april-special">
+  <h2>Month 12 – April 🌸💜</h2>
+
+  <p>
+    April… we made it.
+  </p>
+
+  <p>
+    I <strong>led my first Kairos</strong> — 
+    I came back all enlightened and happy.
+  </p>
+
+  <p>
+    We finally hung out with Haris properly for the first time too 🙌  
+    I was starting to feel like I was finding my people, slowly but surely.
+  </p>
+
+  <p>
+    I also did the <strong>Ice Bucket Challenge</strong> 
+  </p>
+
+  <p>
+    You gave me flowers — <strong>11 months together</strong>.  
+    That hit my heart in the softest way because I rarely get flowers. I loved that baby I appreciate it; And I promise I'm keeping these safe this time
+  </p>
+
+  <p>
+    And then we played basketball together 🏀  
+    (And lowkey... we ******* you know 😅  )
+    Like... a lot. These past two months??  
+    <strong>We gotta chilllll 😭😭😭</strong>)
+  </p>
+
+  <p>
+    <em>(I’m addicted to you.)</em>
+  </p>
+
+  <p>
+    <strong>AND HOLY — BADDIE ALERT 📸👇</strong>
+  </p>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://images.squarespace-cdn.com/content/v1/680957fb9fc9745e8062803e/c5a248ef-300c-4a41-bfd3-e9dbec052d3c/IMG_7564.JPEG?format=750w" alt="Baddie Energy" />
+    </div>
+  </div>
+
+  <p>
+    Your brother visited NYC this month too —  
+    and you went on so many runs I swear you were training for the Olympics 😭🏃‍♀️
+  </p>
+
+  <p>
+    And me? I visited <strong>Purdue for the first time.</strong>  
+    Everything started to feel... real.
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/4.1.JPEG" alt="April Moment 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/4.2.JPEG" alt="April Moment 2" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/4.3.JPEG" alt="April Moment 3" />
+    </div>
+  </div>
+
+  <p>
+    And that leads us into this strange, beautiful, emotional thing we call…  
+    <strong>May.</strong>  
+    Month 1 all over again.
+  </p>
+</section>
+
+
+
+<div id="bottom"></div>
+
+<section id="theletter" class="content letter-section">
+  <h2>To My Love 💌</h2>
+
+  <div class="letter-body" style="opacity: 1; transform: none;">
+    <p>
+      honestly baby this is prob the most effort i put into something, everything here is entirely coded by hand and it took alot of learning to do so please bare with me; 
+      if you'd like here is a lil text box showing all the code
+    </p>
+
+    <!-- Code screenshots -->
+    <div style="max-width: 800px; margin: 20px auto;">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/all%20the%20code.png" 
+           style="width: 100%; margin-bottom: 20px;" alt="Code Screenshot 1">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/more%20of%20all%20the%20code.png" 
+           style="width: 100%; margin-bottom: 20px;" alt="Code Screenshot 2">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/the%20discord%20text.webp" 
+           style="width: 100%;" alt="Discord Text Preview">
+    </div>
+
+    <p>
+      12 months. One year? A whole year already. I loved making this website, I loved looking through all the photos of us, all the memories. Gina, you're a real blessing to be with. IDC how much time I take up or how much effort I put in; you've made my life truly amazing. You brought my smile back, and now it's time to bring yours back. I've fell so deeply in love with you, simple words cannot describe it anymore; You are geniuely everything I've ever wanted. Thank you for always sticking by my side my love. The point of all of this? i want to show you just how much things happen in a year, and how many more years I want to fold in front of us; hopefully in the future, I'm able to look around and show a recap of my life with my wife, you, to everyone in front of me. You've been such an amazing partner this last year and I cannot be more grateful geniuely. You've taught me lessons that I never thought I would agree to, you've made me more eye opening to other peoples opinions, you've allowed me to shut up and listened, and you've made me so happy. I love you forever Gina. You truly are the most special capybara in my life.
+    </p>
+
+    <div style="max-width: 750px; margin: 40px auto 0;">
+      <img src="https://raw.githubusercontent.com/coolspotyt/Gina/main/capybara.png" 
+     style="width: 100%;" alt="Capybara Sendoff">
+    </div>
+  </div>
+</section>
+
+<p>
+  that's actually crazy we're deadass soulmates because while creating this code on github the file itself was named capybara heheheheheh okie my love byeeee i love youuuu
+</p>
+
+
+  <!-- JS -->
+<script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    preloader.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+
+    carousels.forEach(carousel => {
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      let index = 0;
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, 3500);
+    });
+
+    // Scroll animation for the letter
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    const letterBody = document.querySelector('.letter-body');
+    if (letterBody) observer.observe(letterBody);
+  });
+</script>
+
+
+
+
+
+
+</body>
+</html>
